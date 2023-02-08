@@ -9,7 +9,7 @@ pipeline {
     SVC_ACCOUNT_KEY = credentials('terraform-auth')
   }
      
-    stages {
+    stage {
         stage ('checkout'){
             steps {
                 git branch: 'master', url: 'https://github.com/jahmed-wq/jar.git'
