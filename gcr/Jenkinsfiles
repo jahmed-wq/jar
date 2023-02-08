@@ -26,7 +26,7 @@ pipeline {
 		stage('Set creds') {
             steps {
               
-                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./gcr/jenkins.json'
+                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./gcr/chabi.json'
 		            sh 'pwd'
                        
                
@@ -46,7 +46,7 @@ pipeline {
 			  dir('gcr')
 			 {
 			 sh 'pwd'
-        sh 'gcloud auth activate-service-account hawkeye@noble-descent-370107.iam.gserviceaccount.com --key-file=jenkins.json'
+        sh 'gcloud auth activate-service-account hawkeye@noble-descent-370107.iam.gserviceaccount.com --key-file=chabi.json'
 	sh 'gcloud auth configure-docker'
         sh 'docker push gcr.io/noble-descent-370107/javaapp2'
 			 }
