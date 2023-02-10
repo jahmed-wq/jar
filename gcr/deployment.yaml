@@ -15,18 +15,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javaapp2
+  name: javaapp
   labels:
-    app: javaapp2
+    app: javaapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: javaapp2
+      app: javaapp
   template:
     metadata:
       labels:
-        app: javaapp2
+        app: javaapp
     spec:
       containers:
       - name: java01
