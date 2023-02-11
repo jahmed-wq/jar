@@ -5,7 +5,7 @@ metadata:
   name: my-lb-service
 spec:
   type: LoadBalancer
-  loadBalancerIP: 35.184.183.136
+  loadBalancerIP: 35.198.34.58
   selector:
     app: javaapp
   ports:
