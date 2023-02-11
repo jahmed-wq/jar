@@ -84,7 +84,7 @@ pipeline {
     stage('App health check') {
 	 steps {
     
-        sh 'curl http://35.184.183.136:8080/health'
+        sh 'curl http://35.198.34.58:8080/health'
 	
     
     }
