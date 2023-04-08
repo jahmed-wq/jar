@@ -5,7 +5,7 @@ metadata:
   name: my-lb-service
 spec:
   type: LoadBalancer
-  loadBalancerIP: 35.198.34.58
+  loadBalancerIP: 34.136.29.48
   selector:
     app: javaapp
   ports:
@@ -30,6 +30,6 @@ spec:
     spec:
       containers:
       - name: java01
-        image: gcr.io/noble-descent-370107/javaapp2:latest
+        image: gcr.io/probable-maker-381908/javaapp2:latest
         ports:
         - containerPort: 8080
