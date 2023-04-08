@@ -5,7 +5,7 @@ pipeline {
     stage('Get creds from GKE cluster') {
 	 steps {
     
-        sh 'gcloud container clusters get-credentials samples-cluster --zone southamerica-east1-a --project noble-descent-370107'
+        sh 'gcloud container clusters get-credentials samples-cluster --zone southamerica-east1-a --project probable-maker-381908'
     }
     }
     
@@ -39,7 +39,7 @@ pipeline {
     stage('Test App') {
 	 steps {
     
-        sh 'curl http://35.198.34.58:8080/health'
+        sh 'curl http://http://35.198.5.73/:8080/health'
 	
     }
     
