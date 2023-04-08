@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage ('checkout'){
             steps {
-                git branch: 'master', url: 'https://github.com/ishaqmdgcp/jar.git'
+                git branch: 'master', url: 'https://github.com/jahmed-wq/jar.git'
             }
         }
       
@@ -16,7 +16,7 @@ pipeline {
 		stage('Set creds') {
             steps {
               
-                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./gcr/jenkins.json'
+                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./gcr/chabi.json'
 		            sh 'pwd'
                        
                
@@ -28,7 +28,7 @@ pipeline {
 		 steps {  
 			  dir('gcr')
 			 {
-        sh 'gcloud auth activate-service-account jenkins@mihappens.iam.gserviceaccount.com --key-file=jenkins.json'
+        sh 'gcloud auth activate-service-account terraform-json@probable-maker-381908.iam.gserviceaccount.com --key-file=chabi.json'
 				 }
 		 }
 	 }
@@ -37,14 +37,14 @@ pipeline {
 	stage('Create GKE cluster') {
 	 steps {
     
-        sh 'gcloud container clusters delete samples-cluster --zone us-central1-a --project mihappens --quiet'
+        sh 'gcloud container clusters delete samples-cluster --zone us-central1-a --project probable-maker-381908 --quiet'
     }
     }
        
    }
    post{
         failure{
-            emailext to: "miinstitutes@gmail.com",
+            emailext to: "zarfsworld900@gmail.com",
             subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
             body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}",
             attachLog: true
