@@ -39,7 +39,7 @@ pipeline {
     stage('Test App') {
 	 steps {
     
-        sh 'curl http://35.198.5.73:8080/health'
+        sh 'curl http://34.132.13.189:8080/health'
 	
     }
     
