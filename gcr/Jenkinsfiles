@@ -26,7 +26,7 @@ pipeline {
 		stage('Set creds') {
             steps {
               
-                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./gcr/chabi.json'
+                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./gcr/jenkins.json'
 		            sh 'pwd'
                        
                
@@ -46,7 +46,7 @@ pipeline {
 			  dir('gcr')
 			 {
 			 sh 'pwd'
-        sh 'gcloud auth activate-service-account terraform-json@probable-maker-381908.iam.gserviceaccount.com --key-file=chabi.json'
+        sh 'gcloud auth activate-service-account practice@probable-maker-381908.iam.gserviceaccount.com --key-file=chabi.json'
 	sh 'gcloud auth configure-docker'
         sh 'docker push gcr.io/probable-maker-381908/javaapp2'
 			 }
@@ -84,7 +84,7 @@ pipeline {
     stage('App health check') {
 	 steps {
     
-        sh 'curl http://34.132.13.189:8080/health'
+        sh 'curl http://34.31.240.21:8080/health'
 	
     
     }
