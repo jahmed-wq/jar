@@ -28,7 +28,7 @@ pipeline {
 		 steps {  
 			  dir('gcr')
 			 {
-        sh 'gcloud auth activate-service-account practice@probable-maker-381908.iam.gserviceaccount.com --key-file=chabi.json'
+        sh 'gcloud auth activate-service-account practice@probable-maker-381908.iam.gserviceaccount.com --key-file=jenkins.json'
 				 }
 		 }
 	 }
