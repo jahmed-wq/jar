@@ -5,9 +5,9 @@ metadata:
   name: my-lb-service
 spec:
   type: LoadBalancer
-  loadBalancerIP: 34.132.13.189
+  loadBalancerIP: 34.31.240.21
   selector:
-    app: javaapp
+    app: jaraapp
   ports:
   - port: 8080
     targetPort: 8080
@@ -15,18 +15,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javaapp
+  name: jaraapp
   labels:
-    app: javaapp
+    app: jaraapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: javaapp
+      app: jaraapp
   template:
     metadata:
       labels:
-        app: javaapp
+        app: jaraapp
     spec:
       containers:
       - name: java01
