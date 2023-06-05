@@ -16,7 +16,7 @@ pipeline {
 		stage('Set creds') {
             steps {
               
-                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./gcr/chabi.json'
+                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./gcr/jenkins.json'
 		            sh 'pwd'
                        
                
@@ -28,7 +28,7 @@ pipeline {
 		 steps {  
 			  dir('gcr')
 			 {
-        sh 'gcloud auth activate-service-account terraform-json@probable-maker-381908.iam.gserviceaccount.com --key-file=chabi.json'
+        sh 'gcloud auth activate-service-account practice@probable-maker-381908.iam.gserviceaccount.com --key-file=chabi.json'
 				 }
 		 }
 	 }
