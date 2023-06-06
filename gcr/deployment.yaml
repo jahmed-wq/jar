@@ -30,6 +30,6 @@ spec:
     spec:
       containers:
       - name: java01
-        image: gcr.io/probable-maker-381908/javaapp2
+        image: gcr.io/probable-maker-381908/nimage
         ports:
         - containerPort: 8080
