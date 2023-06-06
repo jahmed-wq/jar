@@ -28,7 +28,7 @@ pipeline {
 		 steps {  
 			  dir('gcr')
 			 {
-        sh 'gcloud auth activate-service-account practice@probable-maker-381908.iam.gserviceaccount.com --key-file=jenkins.json'
+        sh 'gcloud auth activate-service-account colauser@cola900.iam.gserviceaccount.com --key-file=jenkins.json'
 				 }
 		 }
 	 }
@@ -37,7 +37,7 @@ pipeline {
 	stage('Create GKE cluster') {
 	 steps {
     
-        sh 'gcloud container clusters delete samples-cluster --zone us-central1-a --project probable-maker-381908 --quiet'
+        sh 'gcloud container clusters delete samples-cluster --zone us-central1-a --project cola900 --quiet'
     }
     }
        
