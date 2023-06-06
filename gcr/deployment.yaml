@@ -7,7 +7,7 @@ spec:
   type: LoadBalancer
   loadBalancerIP: 34.31.240.21
   selector:
-    app: jaraapp
+    app: javaapp
   ports:
   - port: 8080
     targetPort: 8080
@@ -15,18 +15,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jaraapp
+  name: javaapp
   labels:
-    app: jaraapp
+    app: javaapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jaraapp
+      app: javaapp
   template:
     metadata:
       labels:
-        app: jaraapp
+        app: javaapp
     spec:
       containers:
       - name: java01
