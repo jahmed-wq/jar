@@ -37,7 +37,7 @@ pipeline {
 	 steps {
         /* Below command specifies exactly like the command line */
     
-        sh 'docker build -t gcr.io/probable-maker-381908/javaapp2 .'
+        sh 'docker build -t gcr.io/probable-maker-381908/javaapp2:latest .'
     }
     }
         
