@@ -37,7 +37,7 @@ pipeline {
 	 steps {
         /* Below command specifies exactly like the command line */
     
-        sh 'docker build -t gcr.io/probable-maker-381908/javaapp2 .'
+        sh 'docker build -t gcr.io/probable-maker-381908/nimage .'
     }
     }
         
@@ -48,7 +48,7 @@ pipeline {
 			 sh 'pwd'
         sh 'gcloud auth activate-service-account practice@probable-maker-381908.iam.gserviceaccount.com --key-file=jenkins.json'
 	sh 'gcloud auth configure-docker'
-        sh 'docker push gcr.io/probable-maker-381908/javaapp2'
+        sh 'docker push gcr.io/probable-maker-381908/nimage'
 			 }
 		 }
 	 }
